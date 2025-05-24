@@ -1,11 +1,27 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html>
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=HTTPS://HYTW3339.NET" />
-  <title>Đang chuyển hướng...</title>
+  <title>Đang kiểm tra đường dẫn...</title>
+  <script>
+    const primaryURL = "HTTPS://HYTW3339.NET";
+    const backupURL = "HTTPS://HYTW3596.NET";
+
+    fetch(primaryURL, { mode: 'no-cors' })
+      .then(() => {
+        window.location.href = primaryURL;
+      })
+      .catch(() => {
+        window.location.href = backupURL;
+      });
+
+    // Nếu fetch bị chặn CORS, có thể redirect thẳng sau vài giây
+    setTimeout(() => {
+      window.location.href = primaryURL;
+    }, 2000);
+  </script>
 </head>
 <body>
-  <p>Nếu bạn không được chuyển hướng, hãy nhấn vào <a href="HTTPS://HYTW3339.NET">đây</a>.</p>
+  <p>Đang chuyển hướng...</p>
 </body>
 </html>
